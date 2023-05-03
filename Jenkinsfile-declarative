@@ -14,7 +14,7 @@ pipeline{
       stage("1. Git clone from repo"){
         steps{
          sh "echo start of git clone"
-         git branch: 'main', url: 'https://github.com/femmyreuben/jomacs-web-app.git'
+         git branch: 'main', url: 'https://github.com/Sena106/web-app34.239.104.89.git'
          sh "echo end of git clone"
         }
       }
@@ -45,7 +45,7 @@ pipeline{
       stage("5. Deploying to Tomcat in UAT"){
         steps{
            sh "echo start deploying to server in UAT Env"
-           deploy adapters: [tomcat9(credentialsId: 'tomcat_cred', path: '', url: 'http://3.129.72.184:9090')], contextPath: null, war: 'target/*.war'
+           deploy adapters: [tomcat9(credentialsId: 'tomcat_cred', path: '', url: 'http://52.87.179.174:8080')], contextPath: null, war: 'target/*.war'
         }  
       }
       
